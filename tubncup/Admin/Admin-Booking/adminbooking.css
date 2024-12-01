@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: rgba(35, 31, 32, 1);
+    height: 80px;
+    width: 100%;
+}
+
+.logo {
+    width: max(200px, 15vw);
+    aspect-ratio: 30 / 5;
+}
+
+nav {
+    width: 50%;
+    max-width: 500px;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline-start: 0;
+    margin-block: 0;
+    height: 100%;
+    gap: 30px;
+    font-family: "Lato", sans-serif;
+}
+
+nav > ul > li {
+    list-style-type: none;
+    color: rgba(228, 194, 103, 1);
+}
+
+li > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgba(217, 217, 217, 1);
+    font-size: 16px;
+}
+
+
+/* Headers and Text */
+h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    letter-spacing: 6px;
+    text-align: center;
+}
+
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.table th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.table tr:nth-child(even) {
+    background-color: #e7e7e7;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.table td, .table th {
+    text-align: center;
+}
+
+.table td:first-child, .table th:first-child {
+    text-align: center;
+}
+
+.completed-btn {
+    background-color: #E4C267; 
+    color:  black;         
+    font-weight: bold;     
+    border: none;           
+    border-radius: 5px;      
+    padding: 8px 12px;      
+    cursor: pointer;         
+    transition: background-color 0.3s ease; 
+}
+
+.completed-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    color:  white;  
+}

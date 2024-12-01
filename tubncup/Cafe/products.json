@@ -1,0 +1,109 @@
+[
+    {
+        "id": "b1",
+        "name": "GARLIC CHEESE BOMB",
+        "price": 89,
+        "image": "menu/b1.jpg"
+    },
+    {
+        "id": "b2",
+        "name": "HAM & CHEESE SANDWICH",
+        "price": 129,
+        "image": "menu/b2.jpg"
+    },
+    {
+        "id": "b3",
+        "name": "HAWAIIAN PIZA",
+        "price": 149,
+        "image": "menu/b3.jpg"
+    },
+    {
+        "id": "b4",
+        "name": "FOUR CHEESE PIZZA",
+        "price": 149,
+        "image": "menu/b4.jpg"
+    },
+    {
+        "id": "b5",
+        "name": "PEPPERONI PIZZA",
+        "price": 149,
+        "image": "menu/b5.jpg"
+    },
+    {
+        "id": "b6",
+        "name": "4pc. MOZZARELLA STICKS",
+        "price": 99,
+        "image": "menu/b6.jpg"
+    },
+    {
+        "id": "i1",
+        "name": "ICED SPANISH LATTE",
+        "price": 159,
+        "image": "menu/i1.jpg"
+    },
+    {
+        "id": "i2",
+        "name": "ICED MATCHA CARAMEL",
+        "price": 139,
+        "image": "menu/i2.jpg"
+    },
+    {
+        "id": "h1",
+        "name": "HOT SPANISH LATTE",
+        "price": 149,
+        "image": "menu/h1.jpg"
+    },
+    {
+        "id": "h2",
+        "name": "HOT TUB N CAPPUCCINO",
+        "price": 119,
+        "image": "menu/h2.jpg"
+    },
+    {
+        "id": "f1",
+        "name": "CREME BRULEE FRAP",
+        "price": 179,
+        "image": "menu/f1.jpg"
+    },{
+        "id": "f2",
+        "name": "RED VELVET LATTE FRAP",
+        "price": 149,
+        "image": "menu/f2.jpg"
+    },{
+        "id": "f3",
+        "name": "CARAMEL LATTE FRAP",
+        "price": 159,
+        "image": "menu/f3.jpg"
+    },{
+        "id": "f4",
+        "name": "MATCHA LATTE FRAP",
+        "price": 149,
+        "image": "menu/f4.jpg"
+    },{
+        "id": "f5",
+        "name": "CHARCOAL LATTE FRAP",
+        "price": 149,
+        "image": "menu/f5.jpg"
+    },
+    {
+        "id": "f6",
+        "name": "TNC FRAP",
+        "price": 139,
+        "image": "menu/f6.jpg"
+    },{
+        "id": "l1",
+        "name": "ICED LEMONADE",
+        "price": 99,
+        "image": "menu/l1.jpg"
+    },{
+        "id": "l2",
+        "name": "ICED YAKULT LEMONADE",
+        "price": 129,
+        "image": "menu/l2.jpg"
+    },{
+        "id": "l3",
+        "name": "ICED ESPRESSO LEMONADE",
+        "price": 139,
+        "image": "menu/l3.jpg"
+    }
+]

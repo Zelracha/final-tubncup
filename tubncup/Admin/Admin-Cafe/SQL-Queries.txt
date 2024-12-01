@@ -1,0 +1,56 @@
+CAFE
+
+CREATE TABLE IF NOT EXISTS customer_form (  
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,  
+    full_name VARCHAR(255) NOT NULL,  
+    phone_number VARCHAR(20) NOT NULL,  
+    pickup_time VARCHAR(10) NOT NULL,  
+    payment_method VARCHAR(20) NOT NULL,  
+    cart_items TEXT NOT NULL,  
+    total_price DECIMAL(10, 2) NOT NULL,  
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+  );
+
+
+CREATE TABLE completed_orders (
+  completion_id int(11) NOT NULL AUTO_INCREMENT,
+  order_id int(11) DEFAULT NULL,
+  completion_date datetime DEFAULT current_timestamp(),
+  completed_by varchar(50) DEFAULT NULL,
+  PRIMARY KEY (completion_id),
+  KEY order_id (order_id),
+  CONSTRAINT completed_orders_ibfk_1 FOREIGN KEY (order_id) REFERENCES customer_form (id)
+);
+
+CREATE TABLE cancelled_orders (
+  cancellation_id int(11) NOT NULL AUTO_INCREMENT,
+  order_id int(11) DEFAULT NULL,
+  cancellation_date datetime DEFAULT current_timestamp(),
+  cancelled_by varchar(50) DEFAULT NULL,
+  PRIMARY KEY (cancellation_id),
+  KEY order_id (order_id),
+  CONSTRAINT cancelled_orders_ibfk_1 FOREIGN KEY (order_id) REFERENCES customer_form (id)
+);
+
+BOOKING
+
+CREATE TABLE complete_booking (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cReserveDate DATE,
+    cReserveTime TIME,
+    cOwnerName VARCHAR(255),
+    cPetName VARCHAR(255),
+    cBreed VARCHAR(255),
+    cMobileNum VARCHAR(20),
+    cGroomer VARCHAR(255),
+    cNote TEXT);
+
+CREATE TABLE completed_booking ( 
+  id INT AUTO_INCREMENT PRIMARY KEY, 
+  cReserveDate DATE, cReserveTime TIME, 
+  cOwnerName VARCHAR(255), 
+  cPetName VARCHAR(255), 
+  cBreed VARCHAR(255), 
+  cMobileNum VARCHAR(20), 
+  cGroomer VARCHAR(255), 
+  cNote TEXT);

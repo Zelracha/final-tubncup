@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin-login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Admin Login</title>
+</head>
+
+<body>
+    <div class="login">
+        <img src="image.PNG" alt="Logo">
+        <div class="user">
+            <label for="userinput" id="username">Username</label>
+            <input type="text" id="userinput">
+        </div>
+        <div class="pass">
+            <label for="passinput" id="password">Password</label>
+            <input type="password" id="passinput">
+        </div>
+        <p>*for authorized users only.</p>
+        <button class="loginbtn" onclick="validateLogin()">Login</button>
+        
+        <p id="error-message" style="color: red; display: none;">Incorrect username or password. Please try again.</p>
+    </div>
+
+    <script>
+        function validateLogin() {
+            // Get the values from the input fields
+            const username = document.getElementById("userinput").value;
+            const password = document.getElementById("passinput").value;
+            const errorMessage = document.getElementById("error-message");
+    
+            // Make an AJAX request to validate the login
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "login.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+            // Send the username and password to the PHP script
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const response = xhr.responseText.trim();
+                    if (response === "success") {
+                        window.location.href = "../Admin-Booking/customerbooking.php"; // Redirect on success
+                    } else {
+                        errorMessage.style.display = "block"; // Show error message
+                    }
+                }
+            };
+    
+            // Send the username and password
+            xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
+        }
+    </script>
+    
+</body>
+
+</html>

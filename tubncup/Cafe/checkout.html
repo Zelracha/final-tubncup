@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="checkout.css">
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            animation: slideIn 0.5s ease-in-out;
+            min-width: 300px;
+            max-width: 400px;
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .notification.success {
+            background-color: rgba(228, 194, 103, 1);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .notification p {
+            margin: 0;
+            flex-grow: 1;
+            font-size: 16px;
+        }
+
+        .notification .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 0 5px;
+            transition: transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .notification .close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification.error {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .notification.warning {
+            background-color: #ff9800;
+            color: white;
+        }
+    </style>
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <img src="icons/tnclogo.PNG" class="logo" alt="">
+        <nav>
+            <ul>
+                <li><a href="../Landing/landing.html">Home</a></li>
+                <li><a href="../Booking/booking.php">Reserve a Schedule</a></li>
+                <li><a href="../Cafe/cafeordering.html"><b>Cafe Order</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <a href="cafeordering.html" class="back">
+            <img src="icons/return.png" alt="Return Icon">
+            Return to Orders
+        </a>
+        <div class="checkoutLayout">
+            <div class="returnCheckout">
+                <h1>CART PRODUCTS</h1>
+                <div class="list">
+                </div>
+            </div>
+            <div class="right">
+                <h2>CHECK OUT</h2>
+                <p>* Notice: Items are for pick-up only.</p>
+                <form class="form" id="checkoutForm" action="checkout.php" method="POST">
+                    <div class="group">
+                        <label for="pangalan">Full Name:</label>
+                        <input type="text" name="fullname" id="pangalan" required>
+                    </div>
+                    <div class="group">
+                        <label for="numero">Phone Number:</label>
+                        <input type="text" name="number" id="numero" required>
+                    </div>
+                    <div class="pickup">
+                        <label for="pickupTime">Pick-up Time: </label>
+                        <select name="timePickup" id="pickupTime" required>
+                            <option value="" disabled selected>Select a time</option>
+                            <option name="9:30AM" value="9:30 AM">9:30 AM</option>
+                            <option name="10:00AM" value="10:00 AM">10:00 AM</option>
+                            <option name="10:30AM" value="10:30 AM">10:30 AM</option>
+                            <option name="11:00AM" value="11:00 AM">11:00 AM</option>
+                            <option name="11:30AM" value="11:30 AM">11:30 AM</option>
+                            <option name="12:00PM" value="12:00 PM">12:00 PM</option>
+                            <option name="12:30PM" value="12:30 PM">12:30 PM</option>
+                            <option name="1:00PM" value="1:00 PM">1:00 PM</option>
+                            <option name="1:30PM" value="1:30 PM">1:30 PM</option>
+                            <option name="2:00PM" value="2:00 PM">2:00 PM</option>
+                            <option name="2:30PM" value="2:30 PM">2:30 PM</option>
+                            <option name="3:00PM" value="3:00 PM">3:00 PM</option>
+                            <option name="3:30PM" value="3:30 PM">3:30 PM</option>
+                            <option name="4:00PM" value="4:00 PM">4:00 PM</option>
+                            <option name="4:30PM" value="4:30 PM">4:30 PM</option>
+                            <option name="5:00PM" value="5:00 PM">5:00 PM</option>
+                            <option name="5:30PM" value="5:30 PM">5:30 PM</option>
+                            <option name="6:00PM" value="6:00 PM">6:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="mop">
+                        <label for="mop">Mode of Payment:</label>
+                        <select name="payment" id="mop" required>
+                            <option value="" disabled selected>Select payment method</option>
+                            <option value="cashPayment">Cash Payment</option>
+                            <option value="gcash">Gcash</option>
+                            <option value="bpi">Bank Transfer: BPI</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="cart_items" id="cart_items">
+                    <button type="submit" class="buttonCheckOut">Checkout</button>
+                </form>
+                <div class="return">
+                    <div class="row">
+                        <div>Total Products</div>
+                        <div class="totalQuantity">0</div>
+                    </div>
+                    <div class="row">
+                        <div>Total Price</div>
+                        <div class="totalPrice">₱0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartFromStorage();  // Load and display cart content when the page is loaded
+
+            // Modify the form submission handler
+            document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent form submission
+                
+                const form = document.getElementById('checkoutForm');
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                // Check if cart is empty
+                const cartData = localStorage.getItem('cart');
+                if (!cartData || JSON.parse(cartData).length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+
+                // Show success notification
+                showNotification('Order placed successfully! Please anticipate staff order confirmation.', 'success');
+                
+                // Optional: Clear the cart after successful order
+                localStorage.removeItem('cart');
+                
+                // Optional: Reset the form
+                form.reset();
+                
+                // Optional: Reload cart display
+                loadCartFromStorage();
+            });
+        });
+
+        function showNotification(message, type) {
+            // Remove any existing notification first
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <p>${message}</p>
+                    <button class="close-btn">&times;</button>
+                </div>
+            `;
+
+            // Add notification to the page
+            document.body.appendChild(notification);
+
+            // Add click event to close button
+            notification.querySelector('.close-btn').addEventListener('click', () => {
+                notification.remove();
+            });
+        }
+
+        // Function to load the cart from localStorage and display it
+        function loadCartFromStorage() {
+            const cartData = localStorage.getItem('cart');
+            const listContainer = document.querySelector('.list');
+
+            // Check if cart data exists in localStorage
+            if (cartData) {
+                const carts = JSON.parse(cartData);
+                if (carts.length === 0) {
+                    displayEmptyCartImage();
+                } else {
+                    displayCartItems(carts);
+                    updateTotal(carts);
+                }
+            } else {
+                displayEmptyCartImage();
+            }
+        }
+
+        // Function to display the empty cart image when there are no items
+        function displayEmptyCartImage() {
+            const listContainer = document.querySelector('.list');
+            listContainer.innerHTML = ''; 
+            const emptyCartImage = document.createElement('img');
+            emptyCartImage.src = 'icons/empty-cart.png';  
+            emptyCartImage.alt = 'Your cart is empty';
+            emptyCartImage.classList.add('empty-cart-image');
+            listContainer.appendChild(emptyCartImage);
+        }
+
+        // Function to display the cart items
+        function displayCartItems(carts) {
+            const listContainer = document.querySelector('.list');
+            listContainer.innerHTML = '';  // Clear the list
+
+            carts.forEach(cartItem => {
+                const cartElement = document.createElement('div');
+                cartElement.classList.add('item');
+                cartElement.innerHTML = `
+                    <img src="${cartItem.image}" alt="${cartItem.name}">
+                    <div class="info">
+                        <div class="name">${cartItem.name}</div>
+                    </div>
+                    <div class="quantity">${cartItem.quantity}</div>
+                    <div class="returnPrice">₱${(cartItem.price * cartItem.quantity).toFixed(2)}</div>
+                `;
+                listContainer.appendChild(cartElement);
+            });
+        }
+
+        // Function to update the total quantity and price in the cart
+        function updateTotal(carts) {
+            let totalQuantity = 0;
+            let totalPrice = 0;
+
+            carts.forEach(cartItem => {
+                totalQuantity += cartItem.quantity;
+                totalPrice += cartItem.price * cartItem.quantity;
+            });
+
+            document.querySelector('.totalQuantity').innerText = totalQuantity;
+            document.querySelector('.totalPrice').innerText = `₱${totalPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
