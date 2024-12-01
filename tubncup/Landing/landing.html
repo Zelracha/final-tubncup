@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./icons/paw.png" sizes="16x16" type="image/png">
+    <title>Tub 'N Cup</title>
+</head>
+<body>
+    
+    <header>
+        <img src="icons/tnclogo.PNG" class="logo" alt="">
+        <nav>
+            <ul>
+                <li><a href="../Landing/landing.html"><b>Home</b></a></li>
+                <li><a href="../Booking/booking.php">Reserve a Schedule</a></li>
+                <li><a href="../Cafe/cafeordering.html">Cafe Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="main-container">
+        <div class="content-wrapper">
+            <div class="content-layout">
+                <h1 class="main-heading">We are the 𝐅𝐈𝐑𝐒𝐓 pet grooming café
+                    in Pasig City to give your fur babies
+                    a PAWmazing experience.</h1>
+
+                <div class="gallery-grid">
+                    <img src="assets/1.1.jpg" alt="Gallery image 1" class="gallery-img">
+                    <img src="assets/1.2.jpg" alt="Gallery image 2" class="gallery-img">
+                    <img src="assets/1.3.jpg" alt="Gallery image 3" class="gallery-img">
+                    <img src="assets/1.4.jpg" alt="Gallery image 4" class="gallery-img">
+                </div>
+            </div>
+            <section class="action-section">
+                <div class="button-group">
+                    <a href="../Booking/booking.php"><button class="btn">RESERVE SLOT</button></a>
+                    <a href="../Cafe/cafeordering.html"><button class="btn">PICKUP COFFEE</button></a>
+                </div>
+                <button class="btn btn-center" onclick="openModal('assets/grooming prices.jpg')" >GROOMING PRICELIST</button>
+            </section>
+        </div></main>
+            <div class="paw-border"></div><br>
+            <h2>GIVE YOUR FUR BABY A TREAT!</h2>
+            
+            <div class="treat">
+                <div class="video-section">
+                    <video style="height: 660px; width: 340px;" controls>
+                        <source src="assets/tnctiktok.mp4" type="video/mp4">
+                    </video>
+                </div>
+            
+                <div class="image-section">
+                    <img src="assets/treat1.jpg" class="thumbnail" id="pet-cake-img">
+                    <button class="petcake" onclick="openModal('assets/cake-info.jpeg')">VIEW PET CAKE PRICELIST</button>
+                    
+                    <img src="assets/party.jpg" class="thumbnail" id="party-img">
+                    <button class="party" onclick="openModal('assets/pawty-info.jpeg')">VIEW PET PAWTY INFO</button>
+                </div>
+            </div>
+    
+            <div class="paw-border"></div><br>
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-container">
+
+                <div class="faq-item">
+                    <div class="faq-question">Is there a parking space in the shop?</div>
+                    <div class="faq-answer">
+                        Yes, there is a parking space exclusive for customers.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">Can I order at the cafe if I don't have a pet?</div>
+                    <div class="faq-answer">
+                        Absolutely, yes. Non-Pet owners are also welcome!
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">Can I enjoy the place with my furbaby but not book for grooming service?</div>
+                    <div class="faq-answer">
+                        JavaScript is a programming language used to create interactive effects within web browsers. It is often used alongside HTML and CSS to build dynamic web pages.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">Do you groom pet with severe matted fur?</div>
+                    <div class="faq-answer">
+                        Yes.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">Do you groom aggressive pets?</div>
+                    <div class="faq-answer">
+                        Depends on the level of the furbaby's aggressiveness. We usually handle aggressive pets with a muzzle to prevent biting. However, if the groomer is unable to manage the aggressiveness, we reserve the right to refuse service for the safety of our staff and to avoid causing stress to the furbaby.                    </div>
+                </div>
+            </div>
+            <h3>About Tub 'N Cup</h3>
+            <div class="content">
+                <p>
+                    Tub N Cup is a fusion of pet grooming and cafe. It is an oasis for Pets to be groomed and bathed in a luxury tub while Pawrents get refreshed with a cup of drink from our cafe. While Tub N Cup is a pet cafe, our customers are not limited to pets and their pawrents. A selection of innovative and delectable Milkteas, Fraps, and Lattes as well as currently trendy savory treats like the Cream Cheese Buns, Biscoff Donuts, Fries, and Pizzas are available for anyone to treat themselves with either at the IG-worthy spots inside the shop or for takeaways.
+                </p>
+            </div>
+            
+            <!-- Modal structure -->
+            <div id="image-modal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modal-img" src="" alt="Image">
+            </div>
+
+
+    <footer>
+        <h4>Pet Owners and Non-Pet Owners are welcome!</h4>
+        <div class="socials">
+            <p>Contact Us! <br> 0917 310 3119</p>
+            <a href="https://maps.app.goo.gl/JrBTdXpnmwcuUUSd8"><img src="icons/pin.png"></a>
+            <a href="https://www.facebook.com/tubncup"><img src="icons/facebook.png"></a>
+            <a href="https://www.instagram.com/tubncup/"><img src="icons/instagram.png"></a>
+            <a href="https://www.tiktok.com/@tubncup"><img src="icons/tiktok.png"></a>
+        </div>
+
+    </footer>
+    <div class="foot">
+        <p>SERVING SINCE @2021</p>
+    </div>
+    <script>
+        // Function to open the modal with the clicked image
+        function openModal(imageSrc) {
+            var modal = document.getElementById("image-modal");
+            var modalImg = document.getElementById("modal-img");
+            modal.style.display = "block"; // Show modal
+            modalImg.src = imageSrc; // Set the source of the modal image
+        }
+    
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("image-modal");
+            modal.style.display = "none"; // Hide modal
+        }
+    
+        // Close the modal if the user clicks outside of the image
+        window.onclick = function(event) {
+            var modal = document.getElementById("image-modal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+          // Get all the FAQ questions
+          const faqQuestions = document.querySelectorAll('.faq-question');
+
+        // Loop through each question and add an event listener for the click event
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                // Toggle the corresponding answer visibility
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
